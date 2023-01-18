@@ -8,7 +8,6 @@ function renderCurrency(currencies) {
       <td>${currency.exchangedate}</td>
       </tr>`
   }).join('');
-  console.log(htmlStr)
   document.getElementById('currencies-tbody').innerHTML = htmlStr;
 };
 fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=20230117&json').then(function(data) {
@@ -22,6 +21,5 @@ fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=2023011
       exchangedate: currency.exchangedate
       }
   })
-  console.log(getCurrency);
   renderCurrency(getCurrency);
 });
